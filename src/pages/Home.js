@@ -26,10 +26,10 @@ export default function Home() {
     <div> 
       <HeroSection />
       <main id="main">
+        <MenuItems />
         <AboutUs />
         <WhyUs />
         <StatsCounter />
-        <MenuItems />
         <Testomonials />
         <Events />
         <Chef />

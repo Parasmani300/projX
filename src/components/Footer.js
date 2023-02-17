@@ -19,8 +19,8 @@ export default function () {
           <div>
             <h4>Address</h4>
             <p>
-              A108 Adam Street <br />
-              New York, NY 535022 - US<br />
+              Gaya <br />
+              Bihar- 823001<br />
             </p>
           </div>
 
@@ -31,8 +31,8 @@ export default function () {
           <div>
             <h4>Reservations</h4>
             <p>
-              <strong>Phone:</strong> +1 5589 55488 55<br />
-              <strong>Email:</strong> info@example.com<br />
+              <strong>Phone:</strong> +91 7488210620<br />
+              <strong>Email:</strong> 3starParty@gmail.com<br />
             </p>
           </div>
         </div>
@@ -42,8 +42,7 @@ export default function () {
           <div>
             <h4>Opening Hours</h4>
             <p>
-              <strong>Mon-Sat: 11AM</strong> - 23PM<br />
-              Sunday: Closed
+              <strong>Mon-Sat: 9AM</strong> - 23PM<br />
             </p>
           </div>
         </div>
@@ -63,10 +62,10 @@ export default function () {
 
     <div className="container">
       <div className="copyright">
-        &copy; Copyright <strong><span>Yummy</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>3starParty</span></strong>. All Rights Reserved
       </div>
       <div className="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://github.com/parasmani300">@Parasmani300</a>
       </div>
     </div>
   </footer>

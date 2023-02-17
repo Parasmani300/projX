@@ -20,7 +20,7 @@ export default function Contact() {
       </div>
 
       <div className="mb-3">
-        <iframe style={{border:"0",width:"100%",height:"350px"}} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameBorder="0" allowFullScreen></iframe>
+        <iframe style={{border:"0",width:"100%",height:"350px"}} src="https://goo.gl/maps/tupNtLVJHJjextLe7" frameBorder="0" allowFullScreen></iframe>
       </div>
 
       <div className="row gy-4">
@@ -30,7 +30,7 @@ export default function Contact() {
             <i className="icon bi bi-map flex-shrink-0"></i>
             <div>
               <h3>Our Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <p>Gaya, Bihar 823001</p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function Contact() {
             <i className="icon bi bi-envelope flex-shrink-0"></i>
             <div>
               <h3>Email Us</h3>
-              <p>contact@example.com</p>
+              <p>3starParty@gmail.com</p>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Contact() {
             <i className="icon bi bi-telephone flex-shrink-0"></i>
             <div>
               <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
+              <p>+91 7488210620</p>
             </div>
           </div>
         </div>
@@ -60,8 +60,7 @@ export default function Contact() {
             <i className="icon bi bi-share flex-shrink-0"></i>
             <div>
               <h3>Opening Hours</h3>
-              <div><strong>Mon-Sat:</strong> 11AM - 23PM;
-                <strong>Sunday:</strong> Closed
+              <div><strong>Mon-Sat:</strong> 9AM - 23PM;
               </div>
             </div>
           </div>
