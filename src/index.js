@@ -10,7 +10,6 @@ import './vendor/glightbox/css/glightbox.min.css'
 import './vendor/swiper/swiper-bundle.min.css'
 import './vendor/bootstrap-icons/bootstrap-icons.css'
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

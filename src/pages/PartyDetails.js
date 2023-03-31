@@ -1,13 +1,15 @@
 import React,{useEffect, useState} from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import '../App.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Footer from '../components/Footer';
 import {postDataToFirebase} from '../config/config';
+import axios from 'axios';
 
 export default function PartyDetails() {
   const location = useLocation();
+  const navigate = useNavigate();
   const{item} = location.state;
   const [name,setName] = useState("");
   const [email,setEmail] = useState("");
@@ -16,9 +18,39 @@ export default function PartyDetails() {
   const [time,setTime] = useState("");
   const [address,setAddress] = useState("");
   const [message,setMessage] = useState("");
+  const [sucess,setSucess] = useState(false);
+
+  const fetchInfo = async() => {
+    const uuid = localStorage.getItem("uid");
+    const moreInfo = await axios.get(`${process.env.REACT_APP_BASE_URL}/customer/get?uid=${uuid}`);
+    const data = await moreInfo.data;
+    setName(`${data.firstName} ${data.lastName}`);
+    setEmail(data.email);
+    setPhone(data.contact);
+}
 
   const makeOrder = async(e) => {
     e.preventDefault();
+    if(date == null || date == ""){
+      alert("Date Missing")
+      return;
+    }
+
+    if(time == null || time == ""){
+      alert("Time Missing")
+      return;
+    }
+
+    if(address == null || address == ""){
+      alert("Address Missing")
+      return;
+    }
+
+    if(message == null || message == ""){
+      alert("Additional Message Missing")
+      return;
+    }
+
     const myOrder = {
       name,
       email,
@@ -26,10 +58,13 @@ export default function PartyDetails() {
       date,
       time,
       address,
-      message
+      message,
+      'uid':localStorage.getItem("uid"),
+      'status':'Ordered',
+      item
     }
     console.log(myOrder);
-    const data = await fetch("http://localhost:8080/order/post",{
+    const data = await fetch(`${process.env.REACT_APP_BASE_URL}/order/post`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -38,10 +73,13 @@ export default function PartyDetails() {
     });
     const res = await data.json();
     console.log(res);
+    setSucess(true);
+    navigate(`/confirm`,{state:{'id':res.uuid}})
   }
 
   useEffect(() => {
     AOS.init();
+    fetchInfo();
     
   }, [])
 
@@ -53,7 +91,7 @@ export default function PartyDetails() {
         <div className="col-lg-7 position-relative about-img" style={{backgroundImage: `url(${item.full_image})`}} /*data-aos="fade-up" data-aos-delay="150" */>
           <div className="call-us position-absolute">
             <h4>Book your Party</h4>
-            <p>+91 7488210620</p>
+            <p>+91 9939482302</p>
           </div>
         </div>
          <div className="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300"  >
@@ -89,7 +127,7 @@ export default function PartyDetails() {
     </div>
     {/* Shipping Details */}
       <section id="book-a-table" className="book-a-table">
-      <div className="container" data-aos="fade-up" >
+      {localStorage.getItem('uid')?<div className="container" data-aos="fade-up" >
         <div className="section-header">
           <h2>Shipping Details</h2>
         </div>
@@ -105,6 +143,7 @@ export default function PartyDetails() {
                     className="form-control" 
                     id="name" 
                     placeholder="Your Name" 
+                    defaultValue={name}
                     data-rule="minlen:4" 
                     data-msg="Please enter at least 4 chars" 
                     onChange={(e)=>setName(e.target.value)}  
@@ -118,6 +157,7 @@ export default function PartyDetails() {
                      name="email" 
                      id="email" 
                      placeholder="Your Email" 
+                     defaultValue={email}
                      data-rule="email" 
                      data-msg="Please enter a valid email" 
                      onChange={(e)=>setEmail(e.target.value)}
@@ -130,6 +170,7 @@ export default function PartyDetails() {
                     className="form-control" 
                     name="phone" 
                     id="phone" 
+                    defaultValue={phone}
                     placeholder="Your Phone" 
                     data-rule="minlen:4" 
                     data-msg="Please enter at least 4 chars" 
@@ -139,7 +180,7 @@ export default function PartyDetails() {
                 </div>
                 <div className="col-lg-4 col-md-6">
                   <input 
-                    type="text" 
+                    type="date" 
                     name="date" 
                     className="form-control" 
                     id="date" 
@@ -147,12 +188,13 @@ export default function PartyDetails() {
                     data-rule="minlen:4" 
                     data-msg="Please enter at least 4 chars" 
                     onChange={(e)=>setDate(e.target.value)}
+                    required={true}
                   />
                   <div className="validate"></div>
                 </div>
                 <div className="col-lg-4 col-md-6">
                   <input 
-                    type="text" 
+                    type="time" 
                     className="form-control" 
                     name="time" 
                     id="time" 
@@ -160,6 +202,7 @@ export default function PartyDetails() {
                     data-rule="minlen:4" 
                     data-msg="Please enter at least 4 chars"
                     onChange={(e)=>setTime(e.target.value)}
+                    required={true}
                     />
                   <div className="validate"></div>
                 </div>
@@ -171,6 +214,7 @@ export default function PartyDetails() {
                   rows="5" 
                   placeholder="Shipping Address"
                   onChange={(e) =>setAddress(e.target.value)}
+                  required={true}
                   ></textarea>
                 <div className="validate"></div>
               </div>
@@ -181,6 +225,7 @@ export default function PartyDetails() {
                    rows="5" 
                    placeholder="Message"
                    onChange={(e)=>setMessage(e.target.value)}
+                   required={true}
                    ></textarea>
                 <div className="validate"></div>
               </div>
@@ -190,13 +235,13 @@ export default function PartyDetails() {
                 <div className="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
               </div> */}
               <br />
-              <div className="text-center"><button className='btn btn-danger' onClick={(e)=>makeOrder(e)} >Book Now</button></div>
+              <div className="text-center"><button type='submit' className='btn btn-danger' onClick={(e)=>makeOrder(e)} >Book Now</button></div>
             </form>
           </div>
 
         </div>
 
-      </div>
+      </div>:<center><div>Login to place order <Link to="/login">Click here</Link></div> </center>}
     </section>
     {/* End Shipping details */}
   </section>

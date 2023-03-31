@@ -14,11 +14,11 @@ import Events from '../components/Events';
 import Chef from '../components/Chef';
 import BookATable from '../components/BookATable';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
 
 
 
 export default function Home() {
+    
     useEffect(() => {
         AOS.init();
       }, [])
@@ -29,12 +29,12 @@ export default function Home() {
         <MenuItems />
         <AboutUs />
         <WhyUs />
-        <StatsCounter />
+        {/* <StatsCounter /> */}
         <Testomonials />
-        <Events />
+        {/* <Events /> */}
         <Chef />
         {/* <BookATable /> */}
-        <Contact />
+        {/* <Contact /> */}
       </main>
     </div>
   )
