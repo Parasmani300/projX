@@ -14,7 +14,7 @@ export default function Profile() {
     const fetchInfo = async(uuid) => {
         const moreInfo = await axios.get(`${process.env.REACT_APP_BASE_URL}/customer/get?uid=${uuid}`);
         const data = await moreInfo.data;
-        console.log(data);
+        // console.log(data);
         setFirstName(data.firstName);
         setLastName(data.lastName);
         setContact(data.contact);

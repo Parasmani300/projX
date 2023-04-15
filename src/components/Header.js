@@ -23,7 +23,7 @@ export default function Header() {
     AOS.init();
 
     const checkLoggedIn = localStorage.getItem("token");
-    console.log('checkLoggedIn' + checkLoggedIn);
+    // console.log('checkLoggedIn' + checkLoggedIn);
     if(checkLoggedIn !== ""){
       setLoggedIn(true);
     }else{
@@ -38,9 +38,9 @@ export default function Header() {
     <header id="header" className="header fixed-top d-flex align-items-center">
     <div className="container d-flex align-items-center justify-content-between">
       <Link to="/" className="logo d-flex align-items-center me-auto me-lg-0">
-        {/* <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> --> */}
-        <h1>Go Party<span>.</span></h1>
+        {/* <!-- Uncomment the line below if you also wish to use an image logo --> */}
+         <img src="https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/logo2.jpg?alt=media&token=76312aa1-e7fd-4e8d-8b93-ea28cd378b46" alt="logo" />
+        <h1>GoForStar<span>.</span></h1>
       </Link>
 
       <nav id="navbar" className="navbar">

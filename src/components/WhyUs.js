@@ -18,10 +18,9 @@ export default function () {
 
         <div className="col-lg-4" data-aos="fade-up" data-aos-delay="100" >
           <div className="why-box">
-            <h3>Why Choose Go Party?</h3>
+            <h3>Why Choose GoForStar?</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+              We are the first of our type in the city. Trust on us. We will provide you the best of our services.
             </p>
             <div className="text-center">
               <a href="#" className="more-btn">Learn More <i className="bx bx-chevron-right"></i></a>
@@ -35,24 +34,24 @@ export default function () {
             <div className="col-xl-4" data-aos="fade-up" data-aos-delay="200" >
               <div className="icon-box d-flex flex-column justify-content-center align-items-center">
                 <i className="bi bi-clipboard-data"></i>
-                <h4>Corporis voluptates officia eiusmod</h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                <h4>Operating in 24 cities</h4>
+                <p>We provide you the best service</p>
               </div>
             </div>
 
             <div className="col-xl-4" data-aos="fade-up" data-aos-delay="300" >
               <div className="icon-box d-flex flex-column justify-content-center align-items-center">
                 <i className="bi bi-gem"></i>
-                <h4>Ullamco laboris ladore pan</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                <h4>Affordable plan for all</h4>
+                <p>Choose from our variety of plan</p>
               </div>
             </div>
 
             <div className="col-xl-4" data-aos="fade-up" data-aos-delay="400"  >
               <div className="icon-box d-flex flex-column justify-content-center align-items-center">
                 <i className="bi bi-inboxes"></i>
-                <h4>Labore consequatur incidid dolore</h4>
-                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                <h4>Please reach us in case of any query</h4>
+                <p>Email us @ stargofor@gmail.com</p>
               </div>
             </div>
 

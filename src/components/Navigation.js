@@ -18,7 +18,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const checkLoggedIn = localStorage.getItem("token");
-    console.log('checkLoggedIn' + checkLoggedIn);
+    // console.log('checkLoggedIn' + checkLoggedIn);
     if(checkLoggedIn !== ""){
       setLoggedIn(true);
     }else{

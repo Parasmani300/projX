@@ -30,9 +30,9 @@ export default function Home() {
         <AboutUs />
         <WhyUs />
         {/* <StatsCounter /> */}
-        <Testomonials />
+        {/* <Testomonials /> */}
         {/* <Events /> */}
-        <Chef />
+        {/* <Chef /> */}
         {/* <BookATable /> */}
         {/* <Contact /> */}
       </main>

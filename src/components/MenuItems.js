@@ -49,9 +49,9 @@ export default function MenuItems() {
           '2 pcs vapor light',
           '1 pcs camera',
           '1 Birthday cap'],
-          price:"Rs. 699",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/3.png?alt=media&token=e440e72f-fd6e-497b-b3aa-7d0607df0786",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/3.png?alt=media&token=e440e72f-fd6e-497b-b3aa-7d0607df0786",
+          price:"Rs. 999",
+          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/birthday_img1.jpg?alt=media&token=5f4c8e01-df7a-42bd-ad65-071290ff6dcc",
+          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/birthday_img1.jpg?alt=media&token=5f4c8e01-df7a-42bd-ad65-071290ff6dcc",
           tags:["Cake,Candal,Decorations"]
       },
       {
@@ -70,7 +70,7 @@ export default function MenuItems() {
           '2 pcs vapor light',
           '1 pcs camera',
           '1 Birthday cap'],
-          price:"Rs. 699",
+          price:"Rs. 1299",
           logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/4.png?alt=media&token=c03fe6d4-b535-4a2d-aeb1-d625587f7048",
           full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/4.png?alt=media&token=c03fe6d4-b535-4a2d-aeb1-d625587f7048",
           tags:["Cake,Candal,Decorations"]
@@ -94,8 +94,8 @@ export default function MenuItems() {
           '1 pcs camera',
           '1 Birthday cap'],
           price:"Rs. 699",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/1.png?alt=media&token=cdcd102c-d3ba-47fe-9886-c3662179a22d",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/1.png?alt=media&token=cdcd102c-d3ba-47fe-9886-c3662179a22d",
+          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary1.jpg?alt=media&token=560b68eb-3531-40e6-a72d-34b264dbe52e",
+          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary1.jpg?alt=media&token=560b68eb-3531-40e6-a72d-34b264dbe52e",
           tags:["Cake,Candal,Decorations"]
       },
       {
@@ -114,7 +114,7 @@ export default function MenuItems() {
           '2 pcs vapor light',
           '1 pcs camera',
           '1 Birthday cap'],
-          price:"Rs. 699",
+          price:"Rs. 999",
           logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/3.png?alt=media&token=e440e72f-fd6e-497b-b3aa-7d0607df0786",
           full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/3.png?alt=media&token=e440e72f-fd6e-497b-b3aa-7d0607df0786",
           tags:["Cake,Candal,Decorations"]
@@ -135,9 +135,9 @@ export default function MenuItems() {
           '2 pcs vapor light',
           '1 pcs camera',
           '1 Birthday cap'],
-          price:"Rs. 699",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/4.png?alt=media&token=c03fe6d4-b535-4a2d-aeb1-d625587f7048",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/4.png?alt=media&token=c03fe6d4-b535-4a2d-aeb1-d625587f7048",
+          price:"Rs. 1299",
+          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary2.jpeg?alt=media&token=9fc70927-3feb-40ec-8402-2a6631144782",
+          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary2.jpeg?alt=media&token=9fc70927-3feb-40ec-8402-2a6631144782",
           tags:["Cake,Candal,Decorations"]
       }
     ]

@@ -11,7 +11,7 @@ export default function ConfirmOrder () {
         const snap = await axios.get(`${process.env.REACT_APP_BASE_URL}/order/getOrderById?uid=${location.state.id}`);
         const res = await snap.data;
         setData(res);
-        console.log(res);
+        // console.log(res);
         setFetched(true);
     }
     useEffect(()=>{

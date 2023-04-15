@@ -18,7 +18,7 @@ export default function () {
             <p data-aos="fade-up" data-aos-delay="100" >Best in the city. Explore the options by clicking on Book now. Why wait book your party now...</p>
             <div className="d-flex" data-aos="fade-up" data-aos-delay="200" >
               <a href="#menu" className="btn-book-a-table">Book Now</a>
-              <a href="https://www.youtube.com/watch?v=BU2vBZnyZek" className="glightbox btn-watch-video d-flex align-items-center"><i className="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="https://www.youtube.com/channel/UC180b0CfNLhTzVr8ehSbj1w" className="glightbox btn-watch-video d-flex align-items-center"><i className="bi bi-play-circle"></i><span>Watch Video</span></a>
             </div>
           </div>
           <div className="col-lg-5 order-1 order-lg-2 text-center text-lg-start">

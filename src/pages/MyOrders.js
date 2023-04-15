@@ -12,7 +12,7 @@ export default function MyOrders() {
         const url = `${process.env.REACT_APP_BASE_URL}/order/getForUser?uid=${uid}`;
         const snapShot = await axios.get(url);
         const data = await snapShot.data;
-        console.log(data);
+        // console.log(data);
         setOrder(data);
     }
 
@@ -21,7 +21,7 @@ export default function MyOrders() {
         const url = `${process.env.REACT_APP_BASE_URL}/order/getShippedOrderForUser?uid=${uid}`;
         const snapShot = await axios.get(url);
         const data = await snapShot.data;
-        console.log(data);
+        // console.log(data);
         setShipped(data);
     }
 
@@ -30,7 +30,7 @@ export default function MyOrders() {
         const url = `${process.env.REACT_APP_BASE_URL}/order/getDeliveredOrderForUser?uid=${uid}`;
         const snapShot = await axios.get(url);
         const data = await snapShot.data;
-        console.log(data);
+        // console.log(data);
         setDelivered(data);
     }
 

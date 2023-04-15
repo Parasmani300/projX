@@ -3,8 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import '../App.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Footer from '../components/Footer';
-import {postDataToFirebase} from '../config/config';
+// import Footer from '../components/Footer';
+// import {postDataToFirebase} from '../config/config';
 import axios from 'axios';
 
 export default function PartyDetails() {
@@ -19,6 +19,20 @@ export default function PartyDetails() {
   const [address,setAddress] = useState("");
   const [message,setMessage] = useState("");
   const [sucess,setSucess] = useState(false);
+
+  const postDataToFirebase = async(dbName,value,e) => {
+    e.preventDefault();
+     const data = await fetch(`https://vpart-ccd34-default-rtdb.firebaseio.com/${dbName}.json`,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(value)
+     });
+     const body1 = await data.body;
+    //  console.log(data);
+    //  console.log(body1);
+  }
 
   const fetchInfo = async() => {
     const uuid = localStorage.getItem("uid");
@@ -63,7 +77,7 @@ export default function PartyDetails() {
       'status':'Ordered',
       item
     }
-    console.log(myOrder);
+    // console.log(myOrder);
     const data = await fetch(`${process.env.REACT_APP_BASE_URL}/order/post`,{
       method:"POST",
       headers:{
@@ -72,7 +86,7 @@ export default function PartyDetails() {
       body:JSON.stringify(myOrder)
     });
     const res = await data.json();
-    console.log(res);
+    // console.log(res);
     setSucess(true);
     navigate(`/confirm`,{state:{'id':res.uuid}})
   }
@@ -118,11 +132,9 @@ export default function PartyDetails() {
               <h2>Description</h2>
         </div>
         <p>
-        No matter the size of your online store, product descriptions play a key role in your ecommerce business.
-
-      Effective product descriptions can possibly lure potential customers. Good product descriptions can potentially influence a purchase decision. Great product descriptions can ultimately help improve conversion rates and increase sales, as well as boost your visibility and SEO on paid channels.
-
-        The technical details, including the use of power words and A/B tests, can be the difference between a potential buyer on your ecommerce website and those customers shopping at a competitor with similar products.
+          This package of product includes cakes and all variety of decoratives to make your dat memorable. Try out 
+          from out variety of options and let us know your experience. You can find the details of item contained with this
+          package in Bundle contains section.
         </p>
     </div>
     {/* Shipping Details */}
@@ -179,6 +191,7 @@ export default function PartyDetails() {
                   <div className="validate"></div>
                 </div>
                 <div className="col-lg-4 col-md-6">
+                  <label>Date</label>
                   <input 
                     type="date" 
                     name="date" 
@@ -193,6 +206,7 @@ export default function PartyDetails() {
                   <div className="validate"></div>
                 </div>
                 <div className="col-lg-4 col-md-6">
+                  <label>Time</label>
                   <input 
                     type="time" 
                     className="form-control" 

@@ -13,6 +13,8 @@ export default function SignUp() {
     const signUpUser = async() => {
         if(email != "" && password != "")
         {
+          console.log('Email'+ email);
+          console.log('Password:' + password);
           await signUpNow(email,password,firstName,lastName,contact,axios,navigate);
       }
     }
