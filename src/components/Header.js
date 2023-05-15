@@ -39,7 +39,7 @@ export default function Header() {
     <div className="container d-flex align-items-center justify-content-between">
       <Link to="/" className="logo d-flex align-items-center me-auto me-lg-0">
         {/* <!-- Uncomment the line below if you also wish to use an image logo --> */}
-         <img src="https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/logo2.jpg?alt=media&token=76312aa1-e7fd-4e8d-8b93-ea28cd378b46" alt="logo" />
+         <img src="https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/logoparty.jpg?alt=media&token=5df404d8-d046-4931-bef6-1a0b5cbbb08c" alt="logo" />
         <h1>GoForStar<span>.</span></h1>
       </Link>
 

@@ -62,7 +62,7 @@ export default function () {
 
     <div className="container">
       <div className="copyright">
-        &copy; Copyright <strong><span>3starParty</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>goforstar</span></strong>. All Rights Reserved
       </div>
       <div className="credits">
         Designed by <a href="https://github.com/parasmani300">@Parasmani300</a>

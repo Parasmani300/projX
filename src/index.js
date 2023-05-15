@@ -9,11 +9,16 @@ import './vendor/aos/aos.css'
 import './vendor/glightbox/css/glightbox.min.css'
 import './vendor/swiper/swiper-bundle.min.css'
 import './vendor/bootstrap-icons/bootstrap-icons.css'
+import { Provider } from 'react-redux';
+import store from './reducer/reducer';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>
 );
 

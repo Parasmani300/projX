@@ -11,6 +11,7 @@ import Profile from './pages/Profile';
 import MyOrders from './pages/MyOrders';
 import Navigation from './components/Navigation';
 import ConfirmOrder from './pages/ConfirmOrder';
+import OptionVariety from './pages/OptionVariety';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route element={<Profile />} path="/profile" />
           <Route element={<MyOrders />} path="/orders" />
           <Route element={<ConfirmOrder />} path="/confirm" />
+          <Route element={<OptionVariety />} path="/options" />
         </Routes>
       </BrowserRouter>
       <Footer />

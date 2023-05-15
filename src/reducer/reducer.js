@@ -1557,7 +1557,7 @@ const initialState =  {
         }
       ]
     },
-       CakesAvailable:[
+       cakesAvailable:[
       {
         label:"special delicious vanilla Cake",
         value:"special delicious vanilla Cake",

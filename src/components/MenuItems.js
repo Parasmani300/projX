@@ -3,147 +3,28 @@ import '../App.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { increment } from 'firebase/database';
+import { decrement } from '../reducer/actions';
+
+const mapStateToProps = (state) => {
+  return {
+    avaiableOption: state.avaiableOption
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: (payload) => dispatch(increment(payload)),
+    decrement: (payload) => dispatch(decrement(payload))
+  }
+}
 
 
-export default function MenuItems() {
+function MenuItems(props) {
   useEffect(() => {
     AOS.init();
   }, [])
-
-  const avaiableOption = {
-    birthday:[
-      {
-        name:"Economy",
-        items:['Cake',
-          '10 pcs silver baloon',
-          '10 pcs golden matelic',
-          '2 pcs Golden Heart',
-          '2 pcs Golden Start',
-          '1 set 13 pcs Happy Birthday',
-          '1 pcs Ege represents',
-          '1 pcs knife',
-          '5 pcs candal',
-          '2 pcs chines light',
-          '1 battery',
-          '2 pcs vapor light',
-          '1 pcs camera',
-          '1 Birthday cap'],
-          price:"Rs. 699",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/1.png?alt=media&token=cdcd102c-d3ba-47fe-9886-c3662179a22d",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/1.png?alt=media&token=cdcd102c-d3ba-47fe-9886-c3662179a22d",
-          tags:["Cake,Candal,Decorations"]
-      },
-      {
-        name:"Premium",
-        items:['Cake',
-          '10 pcs silver baloon',
-          '10 pcs golden matelic',
-          '2 pcs Golden Heart',
-          '2 pcs Golden Start',
-          '1 set 13 pcs Happy Birthday',
-          '1 pcs Ege represents',
-          '1 pcs knife',
-          '5 pcs candal',
-          '2 pcs chines light',
-          '1 battery',
-          '2 pcs vapor light',
-          '1 pcs camera',
-          '1 Birthday cap'],
-          price:"Rs. 999",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/birthday_img1.jpg?alt=media&token=5f4c8e01-df7a-42bd-ad65-071290ff6dcc",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/birthday_img1.jpg?alt=media&token=5f4c8e01-df7a-42bd-ad65-071290ff6dcc",
-          tags:["Cake,Candal,Decorations"]
-      },
-      {
-        name:"Luxurious",
-        items:['Cake',
-          '10 pcs silver baloon',
-          '10 pcs golden matelic',
-          '2 pcs Golden Heart',
-          '2 pcs Golden Start',
-          '1 set 13 pcs Happy Birthday',
-          '1 pcs Ege represents',
-          '1 pcs knife',
-          '5 pcs candal',
-          '2 pcs chines light',
-          '1 battery',
-          '2 pcs vapor light',
-          '1 pcs camera',
-          '1 Birthday cap'],
-          price:"Rs. 1299",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/4.png?alt=media&token=c03fe6d4-b535-4a2d-aeb1-d625587f7048",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/4.png?alt=media&token=c03fe6d4-b535-4a2d-aeb1-d625587f7048",
-          tags:["Cake,Candal,Decorations"]
-      }
-    ],
-    anniversary:[
-      {
-        name:"Economy",
-        items:['Cake',
-          '10 pcs silver baloon',
-          '10 pcs golden matelic',
-          '2 pcs Golden Heart',
-          '2 pcs Golden Start',
-          '1 set 13 pcs Happy Birthday',
-          '1 pcs Ege represents',
-          '1 pcs knife',
-          '5 pcs candal',
-          '2 pcs chines light',
-          '1 battery',
-          '2 pcs vapor light',
-          '1 pcs camera',
-          '1 Birthday cap'],
-          price:"Rs. 699",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary1.jpg?alt=media&token=560b68eb-3531-40e6-a72d-34b264dbe52e",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary1.jpg?alt=media&token=560b68eb-3531-40e6-a72d-34b264dbe52e",
-          tags:["Cake,Candal,Decorations"]
-      },
-      {
-        name:"Premium",
-        items:['Cake',
-          '10 pcs silver baloon',
-          '10 pcs golden matelic',
-          '2 pcs Golden Heart',
-          '2 pcs Golden Start',
-          '1 set 13 pcs Happy Birthday',
-          '1 pcs Ege represents',
-          '1 pcs knife',
-          '5 pcs candal',
-          '2 pcs chines light',
-          '1 battery',
-          '2 pcs vapor light',
-          '1 pcs camera',
-          '1 Birthday cap'],
-          price:"Rs. 999",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/3.png?alt=media&token=e440e72f-fd6e-497b-b3aa-7d0607df0786",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/3.png?alt=media&token=e440e72f-fd6e-497b-b3aa-7d0607df0786",
-          tags:["Cake,Candal,Decorations"]
-      },
-      {
-        name:"Luxurious",
-        items:['Cake',
-          '10 pcs silver baloon',
-          '10 pcs golden matelic',
-          '2 pcs Golden Heart',
-          '2 pcs Golden Start',
-          '1 set 13 pcs Happy Birthday',
-          '1 pcs Ege represents',
-          '1 pcs knife',
-          '5 pcs candal',
-          '2 pcs chines light',
-          '1 battery',
-          '2 pcs vapor light',
-          '1 pcs camera',
-          '1 Birthday cap'],
-          price:"Rs. 1299",
-          logo_url:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary2.jpeg?alt=media&token=9fc70927-3feb-40ec-8402-2a6631144782",
-          full_image:"https://firebasestorage.googleapis.com/v0/b/goforstar-4e890.appspot.com/o/anniversary2.jpeg?alt=media&token=9fc70927-3feb-40ec-8402-2a6631144782",
-          tags:["Cake,Candal,Decorations"]
-      }
-    ]
-  }
-
-
 
   return (
     <section id="menu" className="menu">
@@ -151,7 +32,7 @@ export default function MenuItems() {
 
       <div className="section-header">
         <h2>Our Plans</h2>
-        <p>Select from <span>our Birthday Basket</span></p>
+        <p>Select from <span>our Basket</span></p>
       </div>
 
       <ul className="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200" >
@@ -179,15 +60,12 @@ export default function MenuItems() {
           </div>
 
           <div className="row gy-5">
-            {avaiableOption['birthday'].map((item) =>{
+            {props.avaiableOption['birthday'].map((item) =>{
             return <div className="col-lg-4 menu-item">
-              <Link to="/details" state={{check:"working",item:item}}  className="glightbox"><img src={item.logo_url} className="menu-img img-fluid" alt="" /></Link>
+              <Link to="/options" state={{check:"working",type:item.type,name:item.name}}  className="glightbox"><img src={item.logo_url} className="menu-img img-fluid" alt="" /></Link>
               <h4>{item.name}</h4>
               <p className="ingredients">
                 {item.tags[0]}
-              </p>
-              <p className="price">
-                {item.price}
               </p>
             </div>})}
           </div>
@@ -202,14 +80,11 @@ export default function MenuItems() {
 
           <div className="row gy-5">
 
-            {avaiableOption['anniversary'].map((item) => { return <div className="col-lg-4 menu-item">
-              <Link to="/details" state={{check:"working",item:item}} className="glightbox"><img src={item.logo_url} className="menu-img img-fluid" alt="" /></Link>
+            {props.avaiableOption['anniversary'].map((item) => { return <div className="col-lg-4 menu-item">
+              <Link to="/options" state={{check:"working",type:item.type,name:item.name}} className="glightbox"><img src={item.logo_url} className="menu-img img-fluid" alt="" /></Link>
               <h4>{item.name}</h4>
               <p className="ingredients">
                 {item.tags[0]}
-              </p>
-              <p className="price">
-                {item.price}
               </p>
             </div>})}
           </div>
@@ -222,3 +97,5 @@ export default function MenuItems() {
 
   )
 }
+
+export default connect(mapStateToProps,mapDispatchToProps)(MenuItems)

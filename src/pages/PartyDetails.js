@@ -3,11 +3,26 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import '../App.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-// import Footer from '../components/Footer';
-// import {postDataToFirebase} from '../config/config';
 import axios from 'axios';
+import SelectOptions from '../components/SelectOptions';
+import { connect } from 'react-redux';
+import { decrement, selectCake,increment } from '../reducer/actions';
 
-export default function PartyDetails() {
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: (payload) => dispatch(increment(payload)),
+    decrement: (payload) => dispatch(decrement(payload)),
+    selectCake: (payload) => dispatch(selectCake(payload))
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    selected_cake: state.selected_cake
+  }
+}
+
+function PartyDetails(props) {
   const location = useLocation();
   const navigate = useNavigate();
   const{item} = location.state;
@@ -20,21 +35,8 @@ export default function PartyDetails() {
   const [message,setMessage] = useState("");
   const [sucess,setSucess] = useState(false);
 
-  const postDataToFirebase = async(dbName,value,e) => {
-    e.preventDefault();
-     const data = await fetch(`https://vpart-ccd34-default-rtdb.firebaseio.com/${dbName}.json`,{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
-      },
-      body:JSON.stringify(value)
-     });
-     const body1 = await data.body;
-    //  console.log(data);
-    //  console.log(body1);
-  }
 
-  const fetchInfo = async() => {
+const fetchInfo = async() => {
     const uuid = localStorage.getItem("uid");
     const moreInfo = await axios.get(`${process.env.REACT_APP_BASE_URL}/customer/get?uid=${uuid}`);
     const data = await moreInfo.data;
@@ -90,22 +92,23 @@ export default function PartyDetails() {
     setSucess(true);
     navigate(`/confirm`,{state:{'id':res.uuid}})
   }
+ 
 
   useEffect(() => {
     AOS.init();
     fetchInfo();
-    
-  }, [])
+    console.log(props)
+  },[props])
 
 
   return (
     <section id="about" className="hero about">
     <div className="container" data-aos="fade-up" >
       <div className="row gy-4">
-        <div className="col-lg-7 position-relative about-img" style={{backgroundImage: `url(${item.full_image})`}} /*data-aos="fade-up" data-aos-delay="150" */>
-          <div className="call-us position-absolute">
-            <h4>Book your Party</h4>
-            <p>+91 9939482302</p>
+        <div className="col-lg-7 position-relative" >
+          <div className='row'>
+            <img className='col-6' src={item.logo_url} />
+            <img className='col-6' src={props.selected_cake.image} />
           </div>
         </div>
          <div className="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300"  >
@@ -117,10 +120,16 @@ export default function PartyDetails() {
               Items Avaialble with this package are
             </p>
             <ul>
+              <li><i className="bi bi-check2-all"></i>
+              <SelectOptions />
+              </li>
+              <li><i className="bi bi-check2-all"></i>
+              {props.selected_cake.label} Rs. {props.selected_cake.price}
+              </li>
               {item.items.map((itm) => {return <li><i className="bi bi-check2-all"></i> {itm}</li>})}
             </ul>
             <p className="party-details-price">
-                {item.price}
+                Rs. {item.price}
             </p>
           </div>
         </div>
@@ -261,3 +270,5 @@ export default function PartyDetails() {
   </section>
   )
 }
+
+export default connect(mapStateToProps,mapDispatchToProps)(PartyDetails)
